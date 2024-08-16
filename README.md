@@ -1,1 +1,1 @@
-# AREducationTool
+AREducationTool is a Flask-based application designed to facilitate immersive learning through Augmented Reality (AR). This project serves as the backbone of a web application, where the primary function is to initialize the application, configure its routes, and manage the server's operation. Our goal is to enhance educational experiences by integrating AR technology, making learning more interactive and accessible.
