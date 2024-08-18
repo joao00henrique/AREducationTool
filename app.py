@@ -1,10 +1,10 @@
 from flask import Flask
 
-app = Flask(__name__)
+education_app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
+@education_app.route('/')
+def display_greeting():
     return 'Hello, World!'
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    education_app.run(debug=True)
