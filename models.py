@@ -1,6 +1,6 @@
-from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
+from flask_sqlalchemy import SQLAlchemy
 
 load_dotenv()
 
@@ -8,18 +8,17 @@ DATABASE_URI = os.getenv('DATABASE_URI')
 
 db = SQLAlchemy()
 
-content_tags = db.Table('content_tags',
-                        db.Column('educational_content_id', db.Integer,
-                                  db.ForeignKey('educational_content.id'), primary_key=True),
-                        db.Column('tag_id', db.Integer,
-                                  db.ForeignKey('tag.id'), primary_key=True)
-                        )
+content_tags = db.Table(
+    'content_tags',
+    db.Column('educational_content_id', db.Integer, db.ForeignKey('educational_content.id'), primary_key=True),
+    db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'), primary_key=True)
+)
 
-experience_tags = db.Table('experience_tags',
-                           db.Column('ar_experience_id', db.Integer,
-                                     db.ForeignKey('ar_experience.id'), primary_key=True),
-                           db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'), primary_key=True)
-                           )
+experience_tags = db.Table(
+    'experience_tags',
+    db.Column('ar_experience_id', db.Integer, db.ForeignKey('ar_experience.id'), primary_key=True),
+    db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'), primary_key=True)
+)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
